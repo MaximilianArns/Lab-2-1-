@@ -1,11 +1,29 @@
 function validateAndSubmit() {
     document.getElementById("errorMessages").textContent = "";
+    document.getElementById("successMessage").textContent = "";
 
     validateName("firstName");
     validateName("lastName");
     validateEmail("email");
     
+    validateRequiredQuestion("q1", "1: What is the capital of France?");
+    validateRequiredQuestion("q2", "2: Which cities are Swedish cities?");
+    
+    if (document.getElementById("errorMessages").textContent.trim() !== "") {
+            
+        return;
+    }
 
+    document.getElementById("successMessage").textContent = "Quiz submitted successfully!";
+
+}
+
+function validateRequiredQuestion(questionName, questionText) {
+    const questionInputs = document.querySelectorAll(`input[name="${questionName}"]:checked`);
+    
+    if (questionInputs.length === 0) {
+        document.getElementById("errorMessages").textContent += `Please answer question ${questionText}\n`;
+    }
 }
 
 function validateName(nameField) {
