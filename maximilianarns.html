@@ -28,6 +28,8 @@
                     <label><input type="radio" name="q1" value="london"> London</label>
                 </fieldset>
 
+                <span id="correctAnswer-q1" class="correct-answer"></span>
+
                 <fieldset>
                     <legend>2. Which cities are Swedish cities? (Select all that apply) <span class="required">*</span></legend>
                     <label><input type="checkbox" name="q2" value="stockholm"> Stockholm</label>
@@ -36,9 +38,12 @@
                     <label><input type="checkbox" name="q2" value="helsinki"> Helsinki</label>
                 </fieldset>
 
+                <span id="correctAnswer-q2" class="correct-answer"></span>
             
                 <label for="q3" class="question-three">3. What is Swedens official language?</label>
                 <input type="text" id="q3" name="q3">
+
+                <span id="correctAnswer-q3" class="correct-answer"></span>
 
                 <fieldset>
                     <legend>4. How old do you need to be to be considered an adult?</legend>
@@ -46,6 +51,8 @@
                     <label><input type="radio" name="q4" value="22"> 22</label>
                     <label><input type="radio" name="q4" value="17"> 17</label>
                 </fieldset>
+
+                <span id="correctAnswer-q4" class="correct-answer"></span>
 
                 <fieldset>
                     <legend>5. Which of the following are programming languages? (Select all that apply)</legend>
@@ -55,12 +62,19 @@
                     <label><input type="checkbox" name="q5" value="english"> English</label>
                 </fieldset>
 
+                <span id="correctAnswer-q5" class="correct-answer"></span>
+
                 <div id="errorMessages" style="color: red; margin-bottom: 10px;"></div>
                 <div id="successMessage" style="color: green; margin-bottom: 10px;"></div>
-                
+
                 <button type="button" onclick="validateAndSubmit()">Submit</button>
         
             </form>
+        </div>
+
+        <div id="quizResult">
+            <h2>Quiz Result</h2>
+            <p id="score">Your score: <span id="userScore">0</span> out of <span id="totalQuestions">0</span></p>
         </div>
 
     </body>
