@@ -18,16 +18,50 @@
             <input type="email" id="email" name="email" required>
         </form>
 
-        <div>
-            <form action="">
+        <div id="quizContainer">
+            <form id="quizForm">
     
+                <fieldset>
+                    <legend>1. What is the capital of France? <span class="required">*</span></legend>
+                    <label><input type="radio" name="q1" value="paris"> Paris</label>
+                    <label><input type="radio" name="q1" value="berlin"> Berlin</label>
+                    <label><input type="radio" name="q1" value="london"> London</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>2. Which cities are Swedish cities? (Select all that apply) <span class="required">*</span></legend>
+                    <label><input type="checkbox" name="q2" value="stockholm"> Stockholm</label>
+                    <label><input type="checkbox" name="q2" value="sundsvall"> Sundsvall</label>
+                    <label><input type="checkbox" name="q2" value="oslo"> Oslo</label>
+                    <label><input type="checkbox" name="q2" value="helsinki"> Helsinki</label>
+                </fieldset>
+
+            
+                <label for="q3" class="question-three">3. What is Swedens official language?</label>
+                <input type="text" id="q3" name="q3">
+
+                <fieldset>
+                    <legend>4. How old do you need to be to be considered an adult?</legend>
+                    <label><input type="radio" name="q4" value="18"> 18</label>
+                    <label><input type="radio" name="q4" value="22"> 22</label>
+                    <label><input type="radio" name="q4" value="17"> 17</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>5. Which of the following are programming languages? (Select all that apply)</legend>
+                    <label><input type="checkbox" name="q5" value="python"> Python</label>
+                    <label><input type="checkbox" name="q5" value="java"> Java</label>
+                    <label><input type="checkbox" name="q5" value="javascript"> JavaScript</label>
+                    <label><input type="checkbox" name="q5" value="english"> English</label>
+                </fieldset>
+
                 <div id="errorMessages" style="color: red; margin-bottom: 10px;"></div>
         
                 <button type="button" onclick="validateAndSubmit()">Submit</button>
         
             </form>
         </div>
-        
+
     </body>
 
     <script src="maximilianarns.js"></script>
