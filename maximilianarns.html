@@ -3,10 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Quiz</title>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
 
+        <!-- Form to collect visitor information -->
         <form id="visitorForm">
             <label for="firstName">First Name:</label>
             <input type="text" id="firstName" name="firstName" required>
@@ -18,9 +20,11 @@
             <input type="email" id="email" name="email" required>
         </form>
 
+        <!-- Quiz content -->
         <div id="quizContainer">
             <form id="quizForm">
     
+                <!-- Question 1: Single-choice (Required) -->
                 <fieldset>
                     <legend>1. What is the capital of France? <span class="required">*</span></legend>
                     <label><input type="radio" name="q1" value="paris"> Paris</label>
@@ -30,6 +34,7 @@
 
                 <span id="correctAnswer-q1" class="correct-answer"></span>
 
+                <!-- Question 2: Multiple-choice (Required) -->
                 <fieldset>
                     <legend>2. Which cities are Swedish cities? (Select all that apply) <span class="required">*</span></legend>
                     <label><input type="checkbox" name="q2" value="stockholm"> Stockholm</label>
@@ -40,11 +45,13 @@
 
                 <span id="correctAnswer-q2" class="correct-answer"></span>
             
+                 <!-- Question 3: Open-ended text entry -->
                 <label for="q3" class="question-three">3. What is Swedens official language?</label>
                 <input type="text" id="q3" name="q3">
 
                 <span id="correctAnswer-q3" class="correct-answer"></span>
 
+                <!-- Question 4: Single-choice -->
                 <fieldset>
                     <legend>4. How old do you need to be to be considered an adult?</legend>
                     <label><input type="radio" name="q4" value="18"> 18</label>
@@ -54,6 +61,7 @@
 
                 <span id="correctAnswer-q4" class="correct-answer"></span>
 
+                <!-- Question 5: Multiple-choice -->
                 <fieldset>
                     <legend>5. Which of the following are programming languages? (Select all that apply)</legend>
                     <label><input type="checkbox" name="q5" value="python"> Python</label>
@@ -64,18 +72,26 @@
 
                 <span id="correctAnswer-q5" class="correct-answer"></span>
 
-                <div id="errorMessages" style="color: red; margin-bottom: 10px;"></div>
-                <div id="successMessage" style="color: green; margin-bottom: 10px;"></div>
+                <!-- Error and success messages -->
+                <div id="errorMessages"></div>
+                <div id="successMessage"></div>
 
+                <!-- Submit button -->
                 <button type="button" onclick="validateAndSubmit()">Submit</button>
         
             </form>
+
+            <!-- The quiz result -->
+            <div id="quizResult">
+                <h2>Quiz Result</h2>
+                <p id="score">Your score: <span id="userScore">0</span> out of <span id="totalQuestions">0</span></p>
+            </div>
+
         </div>
 
-        <div id="quizResult">
-            <h2>Quiz Result</h2>
-            <p id="score">Your score: <span id="userScore">0</span> out of <span id="totalQuestions">0</span></p>
-        </div>
+        <!-- Code for Grade 5, that I didn't finish -->
+        <button id="addQuestionButton" class="question-container" onclick="addQuestion()">Add New Question</button>
+        <div id="questionsContainer" class="question-container"></div>
 
     </body>
 
