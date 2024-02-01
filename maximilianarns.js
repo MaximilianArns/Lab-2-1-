@@ -13,6 +13,7 @@ function validateAndSubmit() {
      // Validate required questions
     validateRequiredQuestion("q1", "1: What is the capital of France?");
     validateRequiredQuestion("q2", "2: Which cities are Swedish cities?");
+    validateRequiredQuestion("q4", "4. How old do you need to be to be considered an adult?");
     
     // Display error messages
     if (document.getElementById("errorMessages").textContent.trim() !== "") {
